@@ -1,0 +1,34 @@
+@import "../../styles/main.scss";
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    height: 340px;
+    margin-bottom: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url(../../images/notFoundImage/404-page-animation.gif);
+    border: 1px solid $white-color;
+    border-radius: 20px;
+
+    @include onDesktop {
+      height: 400px;
+      width: 800px;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    @extend %h1-text;
+
+    &--dark {
+      color: $icons-color;
+    }
+  }
+}

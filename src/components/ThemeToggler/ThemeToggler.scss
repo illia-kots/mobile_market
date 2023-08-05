@@ -1,0 +1,26 @@
+@import "../../styles/main.scss";
+
+.theme-toggler {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transition: border-color 0.5s;
+
+  @include onTablet {
+    border-left: 1px solid $elements-color;
+
+    &--dark {
+      border-left: 1px solid $icons-color;
+    }
+  }
+
+  @include onDesktop {
+    border-left: 1px solid $elements-color;
+
+    &--dark {
+      border-left: 1px solid $icons-color;
+    }
+  }
+}

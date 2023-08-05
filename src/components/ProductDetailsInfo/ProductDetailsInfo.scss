@@ -1,0 +1,438 @@
+@import "../../styles/main.scss";
+
+.product-details {
+  &__title {
+    margin-bottom: 20px;
+
+    @include onDesktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__main-details,
+  &__additional-details {
+    margin-bottom: 40px;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
+  }
+}
+
+.main-details {
+  &__product-id {
+    display: flex;
+    justify-content: flex-end;
+    @extend %body-small-text;
+    color: $icons-color;
+  }
+}
+
+.product-images {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 16px;
+  margin-bottom: 26px;
+
+  @include onDesktop {
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  &__main-image {
+    width: 184px;
+    height: 264px;
+    margin: 0 auto 24px;
+    padding: 16px;
+    background-color: $white-color;
+    border-radius: 10px;
+
+    @include onDesktop {
+      @include squareSize(464px);
+    }
+  }
+
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+
+  @include onDesktop {
+    @include squareSize(464px);
+  }
+}
+
+.small-images {
+  overflow: hidden;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    gap: 16px;
+    @include squareSize(80px);
+  }
+
+  &__image {
+    display: flex;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #c4c4c4;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &--active {
+      border-color: $primary-color;
+    }
+
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &--dark {
+      border-color: $icons-color;
+
+      &-active {
+        border-color: $elements-color;
+      }
+
+      &:hover {
+        border-color: $elements-color;
+      }
+    }
+  }
+
+  .additional-image {
+    padding: 6px;
+    background-color: $white-color;
+    border-radius: 4px;
+  }
+}
+
+.images-slider {
+  &__button {
+    width: 80px;
+    box-sizing: border-box;
+    background-color: $white-color;
+    border: 1px solid $icons-color;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &--prev {
+      margin-bottom: 16px;
+    }
+
+    &--icon {
+      margin: 0 auto;
+    }
+
+    &:hover {
+      border-color: $primary-color;
+    }
+
+    &:disabled {
+      border-color: $elements-color;
+      cursor: default;
+    }
+
+    &--dark {
+      background-color: $primary-color;
+
+      &:hover {
+        border-color: $elements-color;
+      }
+
+      &:disabled {
+        border-color: $secondary-color;
+      }
+    }
+  }
+}
+
+.specifications {
+  display: flex;
+  flex-direction: column;
+
+  &__name {
+    margin-bottom: 8px;
+    @extend %body-small-text;
+    color: $secondary-color;
+
+    &--dark {
+      color: $icons-color;
+    }
+  }
+
+  &__buttons {
+    margin-bottom: 42px;
+
+    @include onDesktop {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+.colors {
+  position: relative;
+
+  &__list {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $elements-color;
+    list-style: none;
+
+    &--dark {
+      border-color: $icons-color;
+    }
+  }
+
+  &__item-circle {
+    @include squareSize(32px);
+    border: 1px solid $elements-color;
+    border-radius: 50px;
+    transition: all 0.5s;
+
+    &:hover {
+      border-color: $secondary-color;
+    }
+
+    &--active {
+      border-color: $primary-color;
+
+      &:hover {
+        border-color: $primary-color;
+      }
+    }
+
+    &--dark {
+      border-color: $icons-color;
+
+      &:hover {
+        border-color: $white-color;
+      }
+  
+      &-active {
+        border-color: $white-color;
+
+        &:hover {
+          border-color: $white-color;
+        }
+      }
+  
+    }
+  }
+
+  &__item {
+    display: block;
+    @include squareSize(28px);
+    border: 2px solid $white-color;
+    border-radius: 50px;
+
+    &--dark {
+      border-color: $primary-color;
+    }
+  }
+}
+
+.capacity {
+  position: relative;
+
+  &__list {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 32px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid $elements-color;
+    list-style: none;
+
+    &--dark {
+      border-color: $icons-color;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $icons-color;
+    transition: all 0.5s;
+
+    &:hover {
+      border-color: $secondary-color;
+    }
+
+    &--active {
+      border-color: $primary-color;
+      background-color: $primary-color;
+  
+      &:hover {
+        border-color: $primary-color;
+      }
+    }
+
+    &--dark {
+      border-color: $icons-color;
+
+      &:hover {
+        border-color: $elements-color;
+      }
+
+      &-active {
+        background-color: $white-color;
+        border-color: $white-color;
+      }
+    }
+  }
+
+  &__link {
+    padding: 8px;
+    @extend %body-text;
+    color: $primary-color;
+    text-decoration: none;
+
+    &--active {
+      color: $white-color;
+    }
+
+    &--dark {
+      color: $icons-color;
+
+      &-active {
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-bottom: 6px;
+
+  &__discountPrice {
+    @extend %h1-text;
+
+    &--dark {
+      color: $elements-color;
+    }
+  }
+
+  &__priceRegular {
+    @extend %h2-text;
+    font-weight: $font-weight-regular;
+    color: $secondary-color;
+    text-decoration: line-through;
+  }
+}
+
+.short-spec {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    @extend %body-small-text;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &--name {
+      color: $secondary-color;
+
+      &-dark {
+        color: $icons-color;
+      }
+    }
+
+    &--value {
+      color: $primary-color;
+
+      &-dark {
+        color: $elements-color;
+      }
+    }
+  }
+}
+
+.additional-details {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 0;
+
+  &__title {
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $elements-color;
+    @extend %h2-text;
+
+    &--dark {
+      border-color: $icons-color;
+      color: $icons-color;
+    }
+
+    @include onDesktop {
+      margin-bottom: 32px;
+      padding-bottom: 16px;
+    }
+  }
+}
+
+.about {
+  margin-bottom: 32px;
+
+  @include onDesktop {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    margin-bottom: 32px;
+  
+    &:last-child {
+      margin-bottom: 0;
+    }
+  
+    &-name {
+      margin-bottom: 8px;
+      @extend %h3-text;
+
+      &--dark {
+        color: $icons-color;
+      }
+
+      @include onDesktop {
+        margin-bottom: 16px;
+      }
+    }
+  
+    &-description {
+      @extend %body-text;
+      color: $secondary-color;
+    }
+  }
+}
+
+.tech-specs {
+  margin-bottom: 24px;
+
+  @include onDesktop {
+    margin-bottom: 0;
+  }
+}

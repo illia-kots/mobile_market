@@ -1,0 +1,16 @@
+@import "../../styles/main.scss";
+
+.noResults {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+
+  &__title {
+    @extend %h1-text;
+
+    &--dark {
+      color: $icons-color;
+    }
+  }
+}

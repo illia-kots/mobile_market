@@ -1,0 +1,203 @@
+@import "../../styles/main.scss";
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  box-sizing: border-box;
+  height: 64px;
+  margin-bottom: 14px;
+  background-color: $white-color;
+  box-shadow: 0 3px 13px rgba(23, 32, 49, 0.26);
+  transition: background-color 0.5s;
+
+  &--dark {
+    background-color: $primary-color;
+    box-shadow: inset 3px 47px 35px -58px $shadow-primary-dark-color,
+    0 5px 5px $shadow-secondary-dark-color;
+  }
+
+  @include onTablet {
+    margin-bottom: 24px;
+  }
+
+  @include onDesktop {
+    margin-bottom: 24px;
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $elements-color;
+
+    &--dark {
+      border-color: $secondary-color;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+
+    @include onDesktop {
+      padding-left: 24px;
+      padding-right: 64px;
+    }
+
+    &--cart {
+      padding-left: 24px;
+    }
+  }
+
+  &__nav {
+    display: none;
+
+    @include onDesktop {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.5s;
+
+    @include onDesktop {
+      border-bottom: 3px solid transparent;
+    }
+
+    &:hover {
+      border-color: $icons-color;
+    }
+
+    &--dark {
+      border-color: transparent;
+  
+      &:hover {
+        border-color: $icons-color;
+      }
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  visibility: hidden;
+
+  &--opened {
+    top: 65px;
+    height: 54px;
+    visibility: visible;
+    transition: height 0.5s;
+
+    &-dark {
+      background-color: $primary-color;
+    }
+
+    @include onDesktop {
+      visibility: hidden;
+    }
+  }
+
+  @include onDesktop {
+    visibility: hidden;
+  }
+}
+
+.top-actions {
+  display: flex;
+  justify-content: flex-end;
+  height: 64px;
+
+  &__menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include onDesktop {
+      display: none;
+    }
+
+    &:hover {
+      border-bottom: none;
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @include onTablet {
+      border-left: 1px solid $elements-color;
+
+      &--dark {
+        border-color: $icons-color;
+      }
+    }
+
+    @include onDesktop {
+      border-left: 1px solid $elements-color;
+
+      &--dark {
+        border-color: $icons-color;
+      }
+    }
+  }
+
+  &__link {
+    display: flex;
+    padding: 22px 24px;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.5s;
+
+    @include onDesktop {
+      border-bottom: 3px solid transparent;
+    }
+
+    &--button {
+      background-color: $white-color;
+      border-top-style: none;
+      border-right-style: none;
+      border-left-style: none;
+
+      &-dark {
+        background-color: $primary-color;
+        box-shadow: inset 3px 47px 35px -58px $shadow-primary-dark-color;
+      }
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      @include onDesktop {
+        border-color: $icons-color;
+      }
+    }
+
+    &--active {
+      border-color: $primary-color;
+
+      &:hover {
+        border-color: $primary-color;
+      }
+    }
+
+    &--active-dark {
+      border-color: $elements-color;
+
+      &:hover {
+        border-color: $elements-color;
+      }
+    }
+  }
+}

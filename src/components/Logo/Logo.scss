@@ -1,0 +1,19 @@
+@import "../../styles/main.scss";
+
+.logo {
+  animation: rotateInfinitely 5s infinite ease-in-out;
+  @include squareSize(42px);
+
+  @include onDesktop {
+    @include squareSize(52px);
+  }
+}
+
+@keyframes rotateInfinitely {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
