@@ -1,4 +1,4 @@
-export const SIZE_MOBILE = 599;
+export const SIZE_MOBILE = 639;
 export const SIZE_TABLET = 887;
 export const SIZE_DESKTOP = 1175;
 export const SIZE_DESKTOP_WIDE = 1193;

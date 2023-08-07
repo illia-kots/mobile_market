@@ -38,3 +38,8 @@ Implement functionality such as `fetching data` from the `REST API`, storing pro
   - Fetch;
   - localStorage.
 
+# Short preview
+(./readme/preview/home-page.gif)
+(./readme/preview/responsive-home-page.gif)
+(./readme/preview/darkmode-home-page.gif)
+(./readme/preview/not-found-page.gif)

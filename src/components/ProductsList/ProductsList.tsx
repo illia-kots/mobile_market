@@ -7,7 +7,7 @@ import {
 import { useLocation, useSearchParams } from 'react-router-dom';
 
 import productCategoryList from '../../api/productCategories.json';
-import { SIZE_DESKTOP_WIDE, SIZE_MOBILE } from '../../app/consts';
+import { SIZE_DESKTOP_WIDE, SIZE_MOBILE, SIZE_TABLET } from '../../app/consts';
 import { useAppSelector, useWindowSize } from '../../app/hooks';
 import { Product } from '../../types/Product';
 import { CategoryType } from '../../types/ProductCategory';
@@ -146,12 +146,18 @@ export const ProductsList: React.FC = () => {
   } = productListSettings;
 
   const productListWidth = () => {
-    if (width > SIZE_DESKTOP_WIDE) {
-      setItemsInList(4);
-    } else if (width > SIZE_MOBILE) {
-      setItemsInList(2);
-    } else {
-      setItemsInList(1);
+    switch (true) {
+      case width > SIZE_DESKTOP_WIDE:
+        setItemsInList(4);
+        break;
+      case width > SIZE_TABLET:
+        setItemsInList(3);
+        break;
+      case width > SIZE_MOBILE:
+        setItemsInList(2);
+        break;
+      default:
+        setItemsInList(1);
     }
   };
 

@@ -88,7 +88,7 @@ export const ProductsSlider: React.FC<Props> = ({ type }) => {
     }
   }, [type, productId, items]);
 
-  const cardSize = (width > SIZE_TABLET) ? 288 : 296;
+  const cardSize = (width > SIZE_MOBILE) ? 288 : 296;
 
   const sliderOptions = {
     cardWidth: cardSize,

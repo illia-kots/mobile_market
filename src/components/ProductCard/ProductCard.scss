@@ -9,6 +9,10 @@
   border: 1px solid $elements-color;
   transition: all 0.5s;
 
+  @include onTablet {
+    max-width: 272px;
+  }
+
   @include onDesktop {
     max-width: 272px;
   }
