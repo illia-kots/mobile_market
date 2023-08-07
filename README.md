@@ -39,7 +39,12 @@ Implement functionality such as `fetching data` from the `REST API`, storing pro
   - localStorage.
 
 # Short preview
-(./readme/preview/home-page.gif)
-(./readme/preview/responsive-home-page.gif)
-(./readme/preview/darkmode-home-page.gif)
-(./readme/preview/not-found-page.gif)
+## Home page
+![Home page](./readme/preview/home-page.gif)
+
+![Home page](./readme/preview/responsive-home-page.gif)
+
+![Home page](./readme/preview/darkmode-home-page.gif)
+
+## Not Found page
+![Not Found page](./readme/preview/not-found-page.gif)
